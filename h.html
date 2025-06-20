@@ -555,7 +555,7 @@
         };
 
         async function getAIGeneratedLevel() {
-            const apiUrl = 'https://api.deepseek.com/chat/completions';
+            const apiUrl = 'https://api.deepseek.com;
             
             const prompt = `
 أنت مصمم مستويات محترف للعبة ألغاز ثنائية الأبعاد. مهمتك هي إنشاء مستوى جديد مبدع وفريد من نوعه وقابل للحل.
@@ -627,21 +627,11 @@
                 apiResponseText.innerHTML = `خطأ في توليد المستوى: ${error.message}`;
                 apiResponseText.classList.add("error");
                 apiResponseText.classList.remove("success");
-                return getFallbackLevel();
+                return getAIGeneratedLevel();
             }
         }
 
-        function getFallbackLevel() {
-            console.warn("Using fallback level due to API failure");
-            const fallbackLevels = [
-                ["o-s-------", "----------", "---s-x----", "------s--e", "---x------"],
-                ["o--l--x---", "x--l--l--x", "---l--l---", "x-----l--e"],
-                ["o-x-s-x-e", "---s-x---", "-x---s-x-", "---x-----", "-s---x-s-"],
-                ["ox--x", "-x-xe", "---x-", "x----", "x---x"],
-                ["e-xx-", "x--xx", "--xo-", "-x---", "-----"]
-            ];
-            return fallbackLevels[Math.floor(Math.random() * fallbackLevels.length)];
-        }
+        
 
         const winLevel = async () => {
             game.classList.add("game--win");
