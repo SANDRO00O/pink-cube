@@ -1,0 +1,443 @@
+@font-face {
+  font-family: 'BCArabicBlack';
+  src: url('BritishCouncil-Arabic-Black.ttf')
+}
+
+html {
+  user-select: none;
+  
+  font-size: 3vh;
+}
+
+@media (orientation: portrait) {
+  html {
+    font-size: 2.9vw;
+  }
+  
+}
+
+body {
+  font-family: 'BCArabicBlack';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
+  background-color: #000038;
+  overflow: hidden;
+  font-weight: 700;
+  font-size: 1.5rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.level {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+@media (min-height: 500px),
+(orientation: portrait) {
+  .level {
+    top: 1.3rem;
+  }
+  
+}
+
+.refresh,
+.fullscreen {
+  position: absolute;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #fff;
+  font-weight: 500;
+  background-color: #000038;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.refresh:hover,
+.fullscreen:hover {
+  color: #000038;
+  background-color: #fff;
+}
+
+@media (min-height: 500px),
+(orientation: portrait) {
+  
+  .refresh,
+  .fullscreen {
+    font-size: 1rem;
+  }
+  
+}
+
+.refresh {
+  top: 1rem;
+  right: 1rem;
+}
+
+.fullscreen {
+  top: 1rem;
+  left: 4rem;
+}
+
+.controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+
+.controls__arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.controls__arrow:after {
+  content: "";
+  width: 0;
+  height: 0;
+  margin: 0.5rem;
+  opacity: 0.3;
+}
+
+.controls__arrow--top,
+.controls__arrow--bottom {
+  width: 100%;
+  height: 30vh;
+}
+
+.controls__arrow--left,
+.controls__arrow--right {
+  flex-direction: column;
+  width: 50%;
+  height: 20vh;
+}
+
+.controls__arrow--top,
+.controls__arrow--left {
+  align-items: flex-start;
+}
+
+.controls__arrow--bottom,
+.controls__arrow--right {
+  align-items: flex-end;
+}
+
+.controls__arrow--top:after {
+  border-left: 1.5rem solid transparent;
+  border-right: 1.5rem solid transparent;
+  border-bottom: 1.5rem solid #FFFFFF;
+}
+
+.controls__arrow--left:after {
+  border-top: 1.5rem solid transparent;
+  border-right: 1.5rem solid #fff;
+  border-bottom: 1.5rem solid transparent;
+}
+
+.controls__arrow--right:after {
+  border-top: 1.5rem solid transparent;
+  border-left: 1.5rem solid #fff;
+  border-bottom: 1.5rem solid transparent;
+}
+
+.controls__arrow--bottom:after {
+  border-left: 1.5rem solid transparent;
+  border-right: 1.5rem solid transparent;
+  border-top: 1.5rem solid #fff;
+}
+
+.timer {
+  position: absolute;
+  top: 55%;
+  font-size: 3rem;
+}
+
+.title-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 56, 0.8);
+}
+
+.title-screen--hidden {
+  display: none;
+}
+
+.p5--hidden {
+  display: none;
+}
+
+.title-screen__title {
+  position: relative;
+  font-size: 12vw;
+  color: #fff;
+}
+
+.title-screen__word {
+  color: #FF9191;
+}
+
+.title-screen__button {
+  border-radius: 2px;
+  
+  position: relative;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  background-color: transparent;
+  font-size: 3vw;
+  font-family: 'BCArabicBlack';
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.title-screen__button:hover {
+  color: #000038;
+  background-color: #fff;
+}
+
+@media (orientation: portrait) {
+  .title-screen__title {
+    font-size: 12vw;
+  }
+  
+  .title-screen__button {
+    font-size: 4.5vw;
+    margin: 15px;
+    
+  }
+  
+}
+
+.game {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 29.03rem;
+  top: -5%;
+}
+
+.game--tutorial:before {
+  position: absolute;
+  bottom: -23%;
+  left: 23%;
+  content: "انقر فوق الاسهم للتحرك";
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .game--tutorial:before {
+    display: none;
+  }
+  
+  .refresh,
+  .fullscreen {
+    border: 1px solid #fff;
+  }
+  
+}
+
+.game--win:after,
+.game--lose:after,
+.game--generating:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-color: rgba(0, 0, 56, 0.5);
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.game--win:after {
+  content: "فزت! المرحلة التالية";
+}
+
+.game--lose:after {
+  content: "لقد خسرت! حاول ثانيةً!";
+}
+
+.game--generating:after {
+  content: "يقوم الذكاء الاصطناعي بإنشاء مرحلة جديدة...";
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.game__player {
+  position: absolute;
+  width: var(--cell);
+  height: var(--cell);
+  background-color: #FF9191;
+  top: calc(var(--positionTop) * var(--cell));
+  left: calc(var(--positionLeft) * var(--cell));
+  transition-property: top, left;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+p5 {
+  position: absolute;
+  top: 95%;
+  color: #000000;
+  transition: .4s ease;
+}
+
+p5:active {
+  background-color: #FFFFFFA1;
+  border-radius: 7px;
+  padding: 4px;
+}
+
+a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+
+.attribution {
+  padding-top: 1px;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 3vw;
+}
+
+.attribution i.fa-heart {
+  color: red;
+  font-size: 3vw;
+}
+
+.attribution i.fa-code {
+  color: #FFFFFF;
+  font-size: 3vw;
+}
+
+@media (max-width: 767px) {
+  .game__player {
+    transition-duration: 0.1s;
+  }
+  
+}
+
+@media (min-width: 767px) {}
+
+.game__cell {
+  width: var(--cell);
+  height: var(--cell);
+  background-color: #fff;
+}
+
+.game__cell--rock {
+  background: #000038;
+}
+
+.game__cell--lava {
+  background: linear-gradient(45deg, orange, #ff7d66 150%);
+}
+
+.game__cell--stop {
+  position: relative;
+  background: linear-gradient(45deg, #78d6c6 -50%, #fff 100%);
+}
+
+.game__cell--end {
+  background: #80C0A1;
+}
+
+#loading {
+  transition: all .4s ease;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  transition: all .4s ease;
+  
+  border: 5px solid var(--secondcolor);
+  border-top: 5px solid transparent;
+  border-radius: 500%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#mess {
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+
+/* إضافة أنماط للشاشات الصغيرة */
+
+
+.game__cell--stop {
+  animation: stopPulse 2s infinite;
+}
+
+@keyframes stopPulse {
+  0% {
+    opacity: 0.7;
+  }
+  
+  50% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 0.7;
+  }
+}

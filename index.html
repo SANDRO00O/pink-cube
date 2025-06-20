@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>PINK ICE Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/aac312d2b1.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="loading">
+    <div class="loader"></div>
+  </div>
+  <div id="game" class="game"></div>
+  <div id="controls" class="controls">
+    <div id="top" class="controls__arrow controls__arrow--top"></div>
+    <div id="left" class="controls__arrow controls__arrow--left"></div>
+    <div id="right" class="controls__arrow controls__arrow--right"></div>
+    <div id="bottom" class="controls__arrow controls__arrow--bottom"></div>
+  </div>
+  <div id="level-text" class="level">0</div>
+  <div id="refresh" class="refresh">اعادة تشغيل</div>
+  <div id="timer" class="timer"></div>
+  <div id="title-screen" class="title-screen">
+    <div class="title-screen__title">مكعب <span class="title-screen__word">وردي</span></div>
+    <button id="title-screen-button" class="title-screen__button">لعب</button>
+  </div>
+  <div id="fullscreen" class="fullscreen">شاشة كاملة</div>
+  
+  <p5 id="p5" class="attribution">
+    <a href="https://picna.000.pe/about.html?i=1" target="_blank">
+      <i class="fa fa-code"></i> WITH <i class="fa fa-heart"></i> BY KARRAR©
+    </a>
+  </p5>
+  
+  
+  <script src="script.js"></script>
+  <script>
+    // إخفاء شاشة التحمير بعد تحميل الصفحة
+    window.addEventListener('load', function() {
+      const loadingScreen = document.getElementById('loading');
+      setTimeout(() => {
+        loadingScreen.style.opacity = '0';
+        setTimeout(() => {
+          loadingScreen.style.display = 'none';
+        }, 500);
+      }, 1000);
+    });
+  </script>
+</body>
+
+</html>
